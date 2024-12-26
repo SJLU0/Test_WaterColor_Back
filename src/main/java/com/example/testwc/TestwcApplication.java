@@ -9,6 +9,7 @@ public class TestwcApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TestwcApplication.class, args);
 		System.out.println("這是test_watercolor網站");
+		System.out.println("1226第二次推送");
 	}
 
 }
