@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Product {
-
+//對應 watercolor 資料表
     private Long productId; // 資料庫中的自增欄位，not null
     private String zhName;  // 中文名稱，not null
     private String enName;  // 英文名稱，not null
