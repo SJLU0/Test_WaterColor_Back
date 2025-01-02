@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
+@CrossOrigin(origins = "http://localhost:5174")// 允許前端 http://localhost:5174 請求
 public class ProductController {
 
     private final ProductService productService;
@@ -39,7 +40,7 @@ public class ProductController {
     public ResponseEntity<Product> addProduct(@RequestBody Product product) {
         boolean isAdded = productService.addProduct(product);
         if (isAdded) {
-            return ResponseEntity.status(201).body(product); // 返回201表示創建成功
+            return ResponseEntity.status(201).body(product); // 返回201表示Created成功
         } else {
             return ResponseEntity.status(500).build(); // 500表示服務器錯誤
         }
