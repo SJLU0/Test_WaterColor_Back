@@ -30,4 +30,16 @@ public class ProductService {
         int result = productRepository.addProduct(product);
         return result > 0; // 如果結果大於0，表示新增成功
     }
+
+    // 更新產品
+    public boolean updateProduct(Product product) {
+        int result = productRepository.updateProduct(product);
+        return result > 0; // 如果結果大於0，表示更新成功
+    }
+
+    // 刪除產品
+    public boolean deleteProduct(Long productId) {
+        int result = productRepository.deleteProductById(productId);
+        return result > 0; // 如果結果大於0，表示刪除成功
+    }
 }

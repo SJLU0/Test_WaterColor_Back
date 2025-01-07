@@ -49,6 +49,30 @@ public class ProductRepository {
         );
     }
 
+    // 更新一筆產品
+    public int updateProduct(Product product) {
+        String sql = "UPDATE watercolor SET " +
+                "zh_name = ?, en_name = ?, image1_url = ?, image2_url = ?, price = ?, listing_date = ?, color_category = ? " +
+                "WHERE product_id = ?";
+        
+        return jdbcTemplate.update(sql,
+                product.getZhName(),
+                product.getEnName(),
+                product.getImage1Url(),
+                product.getImage2Url(),
+                product.getPrice(),
+                product.getListingDate(),
+                product.getColorCategory().name(),  // 轉換成字符串 (ENUM)
+                product.getProductId()  // 更新條件為 productId
+        );
+    }
+    
+    // 刪除一筆產品
+    public int deleteProductById(Long productId) {
+        String sql = "DELETE FROM watercolor WHERE product_id = ?";
+        return jdbcTemplate.update(sql, productId);
+    }
+
     // ProductRowMapper 用於將查詢結果轉換為 Product 物件
     // 資料庫查詢結果 (ResultSet) 手動轉換成 Product 實體類
     private static class ProductRowMapper implements RowMapper<Product> {
