@@ -15,7 +15,7 @@ public class Product {
     private LocalDateTime listingDate; // 上架日期，可以是null
     private ColorCategory colorCategory;  // 顏色分類，對應 ENUM 類型
     
-    // 建構子 (Java原本就有，但我先寫出來)
+    // 建構子 (Java原本就有，但寫出來)
     public Product() {}
 
 

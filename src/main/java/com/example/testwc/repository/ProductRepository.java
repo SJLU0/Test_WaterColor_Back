@@ -50,6 +50,7 @@ public class ProductRepository {
     }
 
     // ProductRowMapper 用於將查詢結果轉換為 Product 物件
+    // 資料庫查詢結果 (ResultSet) 手動轉換成 Product 實體類
     private static class ProductRowMapper implements RowMapper<Product> {
         @Override
         public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
